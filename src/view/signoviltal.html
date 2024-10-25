@@ -83,25 +83,25 @@
                 <div class="col-sm-12 col-md-5  text-white border--start align-self-center">
                     <h3>REGISTRA TUS SIGNOS VITALES</h3>
                     <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Fecha de la toma</label>
-                            <input type="date" class="form-control" id="">
-                            </div>
+                      <div class="mb-3">
+                        <select class="form-select" id="nombresignovital">
+                            <option selected>Selecciona la opcion</option>
+                            <option value="1">Presion sanguinea</option>
+                            <option value="2">Temperatura</option>
+                            <option value="3">Saturacion</option>
+                            <option value="4">Pulso</option>
+                        </select>
+                    </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Descripcion </label>
+                                <label for="exampleInputEmail1" class="form-label">Valores </label>
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id=""></textarea>
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="valoressignovital"></textarea>
                                     <label for="floatingTextarea">Comentarios</label>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <select class="form-select" id="">
-                                    <option selected>Selecciona la opcion</option>
-                                    <option value="1">Presion sanguinea</option>
-                                    <option value="2">Temperatura</option>
-                                    <option value="3">Saturacion</option>
-                                    <option value="4">Pulso</option>
-                                </select>
+                            <label for="exampleInputEmail1" class="form-label">Fecha de la toma</label>
+                            <input type="date" class="form-control" id="fechasignovital">
                             </div>
                             <button class="btn btn-primary">Enviar</button>
                     </form>
