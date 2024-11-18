@@ -1,10 +1,9 @@
-//OBJETIVO : Capturar los datos de un formulario
+// OBJETIVO : Capturar los datos de un formulario
 
 // 1. Por cada input, select , textare del formularion se crea una variable
 
 // 2. por cada varible debo utilizar el DOM para 
 // asociar el html con js 
-
 let nombrePaciente=document.getElementById("nombrepaciente")
 let correoPaciente=document.getElementById("correopaciente")
 let fechanacimientoPaciente=document.getElementById("nacimientopaciente")
@@ -48,7 +47,7 @@ botonRegistroPaciente.addEventListener("click",function(evento){
         title: "Registro exitoso!",
         text: "Ya eres parte de nuestra gran familia!",
         icon: "success"
-      });
+    });
 })
 
 

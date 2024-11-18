@@ -31,5 +31,5 @@ botonRegistroEnfermedad.addEventListener("click",function(evento){
         title: "Registro exitoso!",
         text: "Ya eres parte de nuestra gran familia!",
         icon: "success"
-      });
+    });
 })
