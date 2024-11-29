@@ -1,77 +1,109 @@
+// import{buscarPaciente}from "../../services/serviciosPacientes.js"
 
-//Objetivo: Recibir datos del BACK y hacerles render (render=pintarlos)
-// PASO 1 -> Quemar o similar los datos 
+// //Objetivo: Recibir datos del BACK y hacerles render (render=pintarlos)
+// // PASO 1 -> llmar al api
+// buscarPaciente()
+// .then(function(respuestaBack) {
+//     console.log(respuestaBack)
+// //2.crear una referencia a una etiqueta html donde vamos a reanderizar
+// let fila = document.getElementById("fila")
 
-let pacientes = [
-    {
-        id:745, 
-        nombres:"valentino gutierrez",
-        fechaNacimiento:"2000-09-23",
-        ciudad:"medellin",
-        correo:"val@gmail.com",
-        telefono:"3118654712",
-        ips:"sede floreta",
-        grupoIngresos:"c",
-        tienePoliza:"true",
-        fechaAfiliacion:"2024-06-5"
-    },
-    {
-        "id": 748,
-        "nombres": "lucia fernandez",
-        "fechaNacimiento": "2001-06-22",
-        "ciudad": "cartagena",
-        "correo": "lucia.f@gmail.com",
-        "telefono": "3176543210",
-        "ips": "sede manga",
-        "grupoIngresos": "c",
-        "tienePoliza": "true",
-        "fechaAfiliacion": "2024-07-10"
-    },{
-        "id": 747,
-        "nombres": "martin lopez",
-        "fechaNacimiento": "1995-11-10",
-        "ciudad": "cali",
-        "correo": "martin.l@gmail.com",
-        "telefono": "3129876543",
-        "ips": "sede granada",
-        "grupoIngresos": "a",
-        "tienePoliza": "true",
-        "fechaAfiliacion": "2024-01-15"
-    },
-    {
-        "id": 746,
-        "nombres": "sofia ramirez",
-        "fechaNacimiento": "1998-03-15",
-        "ciudad": "bogotá",
-        "correo": "sofia.r@gmail.com",
-        "telefono": "3001234567",
-        "ips": "sede chapinero",
-        "grupoIngresos": "b",
-        "tienePoliza": "false",
-        "fechaAfiliacion": "2023-12-01"
-    }
-    
-]
-//2.crear una referencia a una etiqueta html donde vamos a reanderizar
-let fila = document.getElementById("fila")
+// // 3. Se recorren los datos para obtenerlo de forma separada 
+// respuestaBack.forEach( function(paciente){
+//     console.log(paciente)
+//     // 4. se crean columnas
+//     let columna=document.createElement("div")
+//     columna.classList.add("col")
 
-// 3. Se recorren los datos para obtenerlo de forma separada 
-pacientes.forEach( function(paciente){
-    console.log(paciente)
-    // 4. se crean columnas
-    let columna=document.createElement("div")
-    columna.classList.add("col")
+//     // 5. Se crean tarjetas 
+//     let tarjetas = document.createElement("div")
+//     tarjetas.classList.add("card","p-5","h-100","shadow")
 
-    // 5. Se crean tarjetas 
-    let tarjetas = document.createElement("div")
-    tarjetas.classList.add("card","p-5","h-100","shadow")
+//     // 6. Se crea una etiqueta para poner el nombre del paciente 
+//     let nombre = document.createElement("h1")
+//     nombre.textContent=paciente.nombre
 
-    // 6. Se crea una etiqueta para poner el nombre del paciente 
-    let nombre = document.createElement("h2")
-    nombre.textContent=paciente.nombres
+//     let correo = document.createElement("h2")
+//     correo.textContent=paciente.correo
 
-    //paso final (ORDENANDO LAS CARTAS)
-    tarjetas.appendChild(nombre)
-    columna.appendChild(tarjetas)
-    fila.appendChild(columna) 
+//     //paso final (ORDENANDO LAS CARTAS)
+//     tarjetas.appendChild(nombre)
+//     tarjetas.appendChild(correo)
+//     columna.appendChild(tarjetas)
+//     fila.appendChild(columna) 
+// })
+
+// })
+
+import { buscarPaciente } from "../../services/serviciosPacientes.js";
+
+// Objetivo: Recibir datos del BACK y hacerles render (render=pintarlos)
+buscarPaciente()
+.then(function(respuestaBack) {
+    console.log(respuestaBack);
+
+    // 2. Crear una referencia a una etiqueta HTML donde vamos a renderizar
+    let fila = document.getElementById("fila");
+
+    // 3. Se recorren los datos para obtenerlos de forma separada
+    respuestaBack.forEach(function(paciente) {
+        console.log(paciente);
+
+        // 4. Se crean columnas
+        let columna = document.createElement("div");
+        columna.classList.add("col");
+
+        // 5. Se crean tarjetas
+        let tarjetas = document.createElement("div");
+        tarjetas.classList.add("card", "p-4", "h-100", "shadow");
+
+        // 6. Se crea una etiqueta para poner el nombre del paciente
+        let nombre = document.createElement("h5");
+        nombre.classList.add("card-title");
+        nombre.textContent = paciente.nombre;
+
+        let correo = document.createElement("p");
+        correo.classList.add("card-text");
+        correo.textContent = paciente.correo;
+
+        // 7. Asignar el color del badge según el campo "grupoIngresos" o el estado
+        let estado = document.createElement("span");
+        estado.classList.add("badge", "rounded-pill", "text-white");
+
+        // Asignamos colores según el valor de "grupoIngresos"
+        switch(paciente.grupoIngresos) {
+            case "Urgente":
+                estado.classList.add("bg-urgente");
+                estado.textContent = "Urgente";
+                break;
+            case "Estable":
+                estado.classList.add("bg-estable");
+                estado.textContent = "Estable";
+                break;
+            case "Recuperacion":
+                estado.classList.add("bg-recuperacion");
+                estado.textContent = "Recuperación";
+                break;
+            case "En tratamiento":
+                estado.classList.add("bg-en-tratamiento");
+                estado.textContent = "En tratamiento";
+                break;
+            default:
+                estado.classList.add("bg-secondary");
+                estado.textContent = "Desconocido";  // Valor por defecto si no se encuentra un valor conocido
+                break;
+        }
+
+        // 8. Agregar los elementos a la tarjeta
+        tarjetas.appendChild(nombre);
+        tarjetas.appendChild(correo);
+        tarjetas.appendChild(estado);
+        columna.appendChild(tarjetas);
+
+        // 9. Agregar la tarjeta a la fila
+        fila.appendChild(columna);
+    });
 })
+.catch(function(error) {
+    console.error("Error al cargar los pacientes", error);
+});

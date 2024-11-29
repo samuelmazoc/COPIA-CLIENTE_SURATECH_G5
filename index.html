@@ -3,204 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GESTIONTECH</title>
+    <title>SURATECH</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/styles/estilos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg menu navbar-dark fixed-top">
-            <div class="container-fluid">
-              <img src="./assets/img/logotipo.png" alt="logo" width="60" height="60">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Header y navegación (ocultos inicialmente) -->
+    <header id="header-section" class="navbar navbar-expand-lg navbar-dark fixed-top content-section">
+        <div class="container-fluid">
+            <img src="./assets/img/logotipo.png" alt="logo" width="60" height="60">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/src/view/medico.html" target="_blank"><i class="bi bi-person-fill"></i> Médico</a></li>
+                            <li><a class="dropdown-item" href="/src/view/medicamento.html" target="_blank"><i class="bi bi-pills"></i> Medicamentos</a></li>
+                            <li><a class="dropdown-item" href="/src/view/signoviltal.html" target="_blank"><i class="bi bi-heart-pulse"></i> Signos Vitales</a></li>
+                            <li><a class="dropdown-item" href="/src/view/enfermedad.html" target="_blank"><i class="bi bi-thermometer"></i> Enfermedades</a></li>
+                            <li><a class="dropdown-item" href="/src/view/paciente.html" target="_blank"><i class="bi bi-person-lines-fill"></i> Paciente</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactoModal">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
+                    </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" role="search" id="search-form">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" id="search-input">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
-              </div>
             </div>
-          </nav>
+        </div>
     </header>
+
+    <!-- Main Section -->
     <main>
-        <section class="banner text-white">
-            <h3>SURATECH2</h3>
-            <p>Atrevete a gestionar y controlar tus signos vitales</p>
-            <a href="#textomuestra" class="btn btn-primary">Ver más</a>
-        </section>
-        <section class="container my-5">
+        <!-- Banner Section (oculto inicialmente) -->
+        <section class="banner text-white content-section">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <h3>SURATECH2</h3>
+                    <p>Con SURATECH podrás gestionar
+
+                        Una de las mayores ventajas que ofrecemos es la reducción de la carga administrativa . Gracias a
+                        
+                        La seguridad y privacidad de los datos.
+                        
+                        esta plataforma no solo facilita la administración de la salud de tus pacientes; También te ayuda a mejorar los resultados clínicos.
+                        En resumen, SURATECH es la solución completa para gestionar la salud de tus pacientes de manera eficiente, segura y moderna .</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#informacionModal">Ver más</button>
+                </div>
+                <div class="col-md-6 animate__animated animate__fadeInRight">
                     <img src="./assets/img/tigre.png" alt="tigre" class="img-fluid">
                 </div>
-                <div class="col-6 align-self-center text-center">
-                    <h3>SURATECH2</h3>
-                    <hr>
-                    <p id="textomuestra">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque ex consequatur nobis ab, quaerat, error reprehenderit quo aliquam officiis reiciendis explicabo ea quidem fugiat, in voluptatem est voluptates earum tempora.
-                    </p>
-                    <button class="btn btn-outline-primary">
-                        Ver reportes
-                    </button>
-                </div>
-            </div>    
+            </div>
         </section>
-        <section class="container my-5">
+
+        <!-- Sección de Imagen, Misión y Visión -->
+        <section class="container form-section">
             <div class="row justify-content-center">
-                <div class="col-8">
-                    <h3 class="text-center">Registrate</h3>
-                    <form class="shadow border rounded p-4">
+                <div class="col-md-8 text-center">
+                    <!-- Imagen personalizada -->
+                    <div class="image-section mb-4">
+                        <img src="assets/img/asegurate de vivir.jpg" alt="Imagen de la página" class="img-fluid">
+                    </div>
 
-
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">
-                              <i class="bi bi-person-circle"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="nombre paciente">
-                        </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="basic-addon1">
-                              <i class="bi bi-person-vcard"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="identificacion">
-                        </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">
-                              <i class="bi bi-calendar-check-fill"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="edad">
-                        </div>
-                        </div>
-                        <div class="col-6">
-                        <div class="input-group mb-3">
-                          <span class="input-group-text" id="basic-addon1">
-                            <i class="bi bi-hospital"></i>
-                          </span>
-                          <input type="text" class="form-control" placeholder="ips">
-                      </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-6">
-                            <div class="input-group mb-3">
-                              <span class="input-group-text" id="basic-addon1">
-                                <i class="bi bi-droplet-fill"></i>
-                              </span>
-                              <input type="text" class="form-control" placeholder="Tipo de sangre">
-                          </div>
-                          </div>
-                          <div class="col-6">
-                            <div class="input-group mb-3">
-                              <span class="input-group-text" id="basic-addon1">
-                                <i class="bi bi-at"></i>
-                              </span>
-                              <input type="text" class="form-control" placeholder="gmail">
-                          </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-6">
-                              <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                  <i class="bi bi-peace"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Peso">
+                    <!-- Misión y Visión en Tarjetas -->
+                    <div class="row">
+                        <!-- Misión -->
+                        <div class="col-md-6 mb-4">
+                            <div class="mission-vision-card">
+                                <h4>Visión</h4>
+                                <p>Ser una plataforma líder en la gestión eficiente de la salud, mejorando la calidad de vida de los pacientes.</p>
                             </div>
+                        </div>
+
+                        <!-- Visión -->
+                        <div class="col-md-6 mb-4">
+                            <div class="mission-vision-card">
+                                <h4>Misión</h4>
+                                <p>Brindar soluciones tecnológicas innovadoras que faciliten el acceso y la administración de servicios médicos.</p>
                             </div>
-                            <div class="col-6">
-                              <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                  <i class="bi bi-rulers"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Estatura">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h3 class="text-center">Regístrate</h3>
+                    <form class="shadow-lg border rounded p-4" id="registro-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
+                                    <input type="text" class="form-control" placeholder="Nombre Paciente" id="nombre" required>
+                                </div>
                             </div>
-                            
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-vcard"></i></span>
+                                    <input type="text" class="form-control" placeholder="Identificación" id="identificacion" required>
+                                </div>
                             </div>
-                            <div class="row">
-                              <div class="col-6">
-                                <div class="input-group mb-3">
-                                  <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-phone-vibrate-fill"></i>
-                                  </span>
-                                  <input type="text" class="form-control" placeholder="celular">
-                              </div>
-                              </div>
-                              <div class="col-6">
-                                <div class="input-group mb-3">
-                                  <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-hospital"></i>
-                                  </span>
-                                  <input type="text" class="form-control" placeholder="estado civil">
-                              </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-6">
-                                  <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">
-                                      <i class="bi bi-house-add-fill"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="direccion">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-check-fill"></i></span>
+                                    <input type="number" class="form-control" placeholder="Edad" id="edad" required>
                                 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-hospital"></i></span>
+                                    <input type="text" class="form-control" placeholder="IPS" id="ips" required>
                                 </div>
-                                <div class="col-6">
-                                  <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">
-                                      <i class="bi bi-hospital"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Ciudad">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-droplet-fill"></i></span>
+                                    <input type="text" class="form-control" placeholder="Tipo de Sangre" id="sangre" required>
                                 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
+                                    <input type="email" class="form-control" placeholder="Correo Electrónico" id="correo" required>
                                 </div>
-                      </div>
-
-
-
-                      
-
-                        
-
-                        <button class="btn btn-primary mx-auto d-block" type="submit">enviar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+                                    <input type="password" class="form-control" placeholder="Contraseña" id="password" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+                                    <input type="password" class="form-control" placeholder="Confirmar Contraseña" id="confirm-password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mx-auto d-block" type="submit">Enviar</button>
                     </form>
-
                 </div>
             </div>
         </section>
     </main>
-    <footer>
 
+    <!-- Footer (oculto inicialmente) -->
+    <footer class="footer content-section">
+        <p>&copy; 2024 GestionTech. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Modales -->
+    <!-- Modal "Ver más" -->
+    <div class="modal fade" id="informacionModal" tabindex="-1" aria-labelledby="informacionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="informacionModalLabel">Información de SURATECH</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Somos una plataforma dedicada a la gestión de la salud, brindando servicios a pacientes de manera rápida y eficiente. Con nuestra tecnología, podrás acceder a tus datos médicos de forma segura.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal "Contacto" -->
+    <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Si necesitas más información, por favor contáctanos a través del siguiente correo electrónico: <strong>soporte@suratech.com</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal "Iniciar Sesión" -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="login-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="contraseña.js"></script>
+    <script src="index.js">
+
+  
+    </script>
 </body>
 </html>
+

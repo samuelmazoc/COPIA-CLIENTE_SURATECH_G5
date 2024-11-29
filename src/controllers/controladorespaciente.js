@@ -1,4 +1,8 @@
+import{registrarPaciente}from "../services/serviciosPacientes.js"
+
 // OBJETIVO : Capturar los datos de un formulario
+
+
 
 // 1. Por cada input, select , textare del formularion se crea una variable
 
@@ -28,26 +32,29 @@ botonRegistroPaciente.addEventListener("click",function(evento){
     // 5. se crea un json 
     //que capture todos los datos del formulario
     let datosFDormularioPaciente={
-        nombres:nombrePaciente.value,
+        nombre:nombrePaciente.value,
         fechaNacimiento:fechanacimientoPaciente.value,
         ciudad:ciudadPaciente.value,
         correo:correoPaciente.value,
         telefono:telefonoPaciente.value,
         ips:ipsPaciente.value,
         grupoIngresos:grupoIngresoPaciente.value,
-        tienePoliza:tienePoliza.value,
-        fechaAfiliacion:fechanacimientoPaciente.value
+        tienePoliza:true,
+        fechaAfiliacion:fechaAfiliacion.value
     }
 
     // 6. Se envian los datos al backend
     console.log(datosFDormularioPaciente)
-
-
-    Swal.fire({
-        title: "Registro exitoso!",
-        text: "Ya eres parte de nuestra gran familia!",
-        icon: "success"
+    registrarPaciente(datosFDormularioPaciente)
+    .then(function (respuestaBack) {
+        console.log(respuestaBack)
+        Swal.fire({
+            title: "Registro exitoso!",
+            text: "Ya eres parte de nuestra gran familia!",
+            icon: "success"
+        });
     });
+
 })
 
 

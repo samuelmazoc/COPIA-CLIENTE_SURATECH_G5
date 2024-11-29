@@ -1,3 +1,5 @@
+import{registrarEnfermedad}from "../services/serviviosEnfermedad.js"
+
 
 let nombreEnfermedad=document.getElementById("nombreenfermedad")
 let sintomasEnfermedad=document.getElementById("sintomasenfermadad")
@@ -16,7 +18,7 @@ botonRegistroEnfermedad.addEventListener("click",function(evento){
     // 5. se crea un json 
     //que capture todos los datos del formulario
     let datosFormularioEnfermedad={
-        nombres:nombreEnfermedad.value,
+        nombre:nombreEnfermedad.value,
         sintomas:sintomasEnfermedad.value,
         clasificacion:clasificacionEnfermedad.value,
         grado:gradoEnfermedad.value,
@@ -25,11 +27,15 @@ botonRegistroEnfermedad.addEventListener("click",function(evento){
 
     // 6. Se envian los datos al backend
     console.log(datosFormularioEnfermedad)
+        registrarEnfermedad(datosFormularioEnfermedad)
+        .then(function (respuestaBack) {
+            console.log(respuestaBack)
+            Swal.fire({
+            title: "Registro exitoso!",
+            text: "Ya eres parte de nuestra gran familia!",
+            icon: "success"
+        });
+        })
 
-
-    Swal.fire({
-        title: "Registro exitoso!",
-        text: "Ya eres parte de nuestra gran familia!",
-        icon: "success"
-    });
+    
 })

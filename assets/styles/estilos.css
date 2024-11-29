@@ -1,36 +1,228 @@
-.menu{
+ /* .menu{
     background-color: #0033A0;
+} */
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
 }
 
-.banner{
-    background-image: url("../img/medicos.jpg");
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 25%;
-    position: relative;
-    z-index: 1;
+.navbar {
+    background-color:#0056b3;
 }
 
-.banner::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    top:0;
-    left:0;
-    opacity: 0.5;
-    z-index: -1;
-
+.navbar-nav .nav-link {
+    color: white !important;
 }
 
-.banner2{
-    background-image: url("../img/medico-antendiendo.jpg");
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 25%;
-    position: relative;
-    z-index: 1;
+.navbar-nav .nav-link:hover {
+    background-color: #007bff ;
+    border-radius: 5px;
 }
+
+.navbar-nav .dropdown-menu {
+    background-color: #007bff;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #0056b3;
+}
+
+.banner {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.banner h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.input-group-text {
+    background-color: #007bff;
+    color: white;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.form-section {
+    margin-top: 50px;
+}
+
+.img-fluid {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .banner h3 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+}
+
+        /* Animaciones */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Clases de animación */
+        .animate-slide-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .animate-slide-right {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .banner h3 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+                /* Animación para mostrar el formulario de registro desde los lados */
+                .form-section {
+                    animation: slideInFromLeft 1s ease-out forwards;
+                }
+        
+                @keyframes slideInFromLeft {
+                    from {
+                        transform: translateX(-100%);
+                    }
+                    to {
+                        transform: translateX(0);
+                    }
+                }
+        
+                /* Inicialmente ocultar todo el contenido, excepto el formulario */
+                .content-section {
+                    display: none;
+                }
+        
+                /* Estilo para las tarjetas de misión y visión */
+                .mission-vision-card {
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    background-color: #f9f9f9;
+                    padding: 20px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                }
+        
+                .mission-vision-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+                }
+        
+                .mission-vision-card h4 {
+                    font-size: 1.5rem;
+                    color: #007BFF;
+                    margin-bottom: 10px;
+                }
+        
+                .mission-vision-card p {
+                    font-size: 1.1rem;
+                    color: #555;
+                }
+        
+                /* Sección de imagen responsiva */
+                .image-section img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }

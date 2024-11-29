@@ -1,84 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Paciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Registro de Paciente</title>
+    <link rel="stylesheet" href="../styleDASH/stylepaciente.css">
 </head>
 <body>
     <main>
         <section class="container my-4">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
-                    <h3>Resgistro de paciente</h3>
-                    <form class="p-5 border rounded shadow">
-                        <div class="row">
-                            <div class="col-6">
-                                <label class="form-label">Nombres:</label>
-                                <input type="text" class="form-control" id="nombrepaciente">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Fecha Nacimiento:</label>
-                                <input type="date" class="form-control" id="nacimientopaciente">
-                            </div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-6">
-                                <label class="form-label">ciudad:</label>
-                                <input type="text" class="form-control" id="ciudadpaciente">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">correo:</label>
-                                <input type="email" class="form-control" id="correopaciente">
-                            </div>
-                        </div>
-                        <div class="row my-3"> 
-                            <div class="col-6">
-                                <label class="form-label">Telefono:</label>
-                                <input type="number" class="form-control" id="telefonopaciente">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">IPS:</label>
-                                <input type="text" class="form-control" id="ipspaciente">
-                            </div>
+                    <img src="/assets/img/BIENvendosth (1).jpg" alt="Imagen de bienvenida" class="welcome-image">
 
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-6">
-                                <label class="form-label">Fecha de afiliacion:</label>
-                                <input type="date" class="form-control" id="afiliacionpaciente">
+                    <div class="welcome-message">
+                        <p>¡Hola! Completa el siguiente formulario para registrar a un nuevo paciente.</p>
+                    </div>
+
+                    <div class="form-container">
+                        <h3>Registro de Paciente</h3>
+                        <form id="patient-form" novalidate>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label" for="nombrepaciente">Nombres:</label>
+                                    <input type="text" class="form-control" id="nombrepaciente" placeholder="Ingresa el nombre completo" required>
+                                    <div class="invalid-feedback">Por favor, ingresa un nombre válido.</div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="nacimientopaciente">Fecha de Nacimiento:</label>
+                                    <input type="date" class="form-control" id="nacimientopaciente" required>
+                                    <div class="invalid-feedback">Por favor, ingresa una fecha válida.</div>
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <label class="form-label" >Grupo de Ingreso</label>
-                                    <select class="form-select"  id="grupopaciente" aria-label="Default select example">
-                                <option selected>Selecciona una opcion</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                            </select>
+                            <div class="row my-3">
+                                <div class="col-6">
+                                    <label class="form-label" for="ciudadpaciente">Ciudad:</label>
+                                    <input type="text" class="form-control" id="ciudadpaciente" placeholder="Ciudad de residencia" required>
+                                    <div class="invalid-feedback">Por favor, ingresa una ciudad válida.</div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="correopaciente">Correo:</label>
+                                    <input type="email" class="form-control" id="correopaciente" placeholder="correo@ejemplo.com" required>
+                                    <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="polizapaciente">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Tiene Poliza?</label>
+                            <div class="row my-3"> 
+                                <div class="col-6">
+                                    <label class="form-label" for="telefonopaciente">Teléfono:</label>
+                                    <input type="text" class="form-control masked-input" id="telefonopaciente" placeholder="(XXX) XXX-XXXX" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="ipspaciente">IPS:</label>
+                                    <input type="text" class="form-control" id="ipspaciente" placeholder="Nombre de la IPS" required>
+                                </div>
                             </div>
-                        </div>
-                        <button  class="btn btn-primary w-100" type="submit" id="botonregistropaciente">Registro</button>    
-                    </form>
+                            <div class="row my-3">
+                                <div class="col-6">
+                                    <label class="form-label" for="afiliacionpaciente">Fecha de Afiliación:</label>
+                                    <input type="date" class="form-control" id="afiliacionpaciente" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="grupopaciente">Grupo de Ingreso:</label>
+                                    <select class="form-select" id="grupopaciente" name="grupoIngresos" required>
+                                        <option selected>Selecciona una opción</option>
+                                        <option value="Recuperacion">Recuperación</option>
+                                        <option value="Urgente">Urgente</option>
+                                        <option value="Estable">Estable</option>
+                                        <option value="En tratamiento">En tratamiento</option>
+                                        <option value="Desconocido">Desconocido</option>
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, selecciona un grupo de ingreso.</div>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="polizapaciente">
+                                    <label class="form-check-label" for="polizapaciente">¿Tiene Póliza?</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" id="botonregistropaciente" type="submit">Registrar Paciente</button>    
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main> 
 
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Todos los derechos reservados</p>
+        <p>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </p>
+        <!-- Agregar el enlace adicional aquí -->
+        <a href="../view/dashboars/dashboarsclientes.html" class="btn btn-primary" role="button">Ir al Dashboard</a>
+    </footer>
 
-
-
-
-    <script src="../controllers/controladorespaciente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../controllers/controladorespaciente.js" type="module"></script>
+    <script src="/src/controllers/controllersdashboars/controllarsDASHpaciente.js" type="module"></script>
+
+    <button class="floating-btn" id="floating-btn" title="Enviar Registro">
+        <i class="fas fa-paper-plane"></i>
+    </button>
 </body>
 </html>

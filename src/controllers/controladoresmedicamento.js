@@ -1,3 +1,5 @@
+import{registrarMedicamento}from "../services/serviciosMedicamento.js"
+
 let nombreMedicamento=document.getElementById("nombremedicamento")
 let presentacionedicamento=document.getElementById("presentacionmedicamento")
 let dosisMedicamento=document.getElementById("dosismedicamento")
@@ -17,24 +19,26 @@ botonRegistroMedicamento.addEventListener("click",function(evento){
     // 5. se crea un json 
     //que capture todos los datos del formulario
     let datosFDormularioMedicamento={
-        nombres:nombreMedicamento.value,
+        nombre:nombreMedicamento.value,
         presentacion:presentacionedicamento.value,
         dosis:dosisMedicamento.value,
         laboratorio:laboratorioMedicamento.value,
         fechaDeCaducidad:fechaCaducidadMedicamento.value,
-        contraIndicacion:contraIndicacionesMedicamento.value,
+        contraIndecaciones:contraIndicacionesMedicamento.value,
         registro:registroMedicamento.value,
-        tienecopago:tieneCopagoMedicamento.value
+        tienecopago:true
         
     }
 
     // 6. Se envian los datos al backend
     console.log(datosFDormularioMedicamento)
-
-
-    Swal.fire({
-        title: "Registro exitoso!",
-        text: "Ya eres parte de nuestra gran familia!",
-        icon: "success"
-      });
+    registrarMedicamento(datosFDormularioMedicamento)
+    .then(function (respuestaBack) {
+        console.log(respuestaBack)
+            Swal.fire({
+            title: "Registro exitoso!",
+            text: "Ya eres parte de nuestra gran familia!",
+            icon: "success"
+        });
+    })
 })
