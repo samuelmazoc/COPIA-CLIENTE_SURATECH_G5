@@ -34,7 +34,6 @@ botonRegistroPaciente.addEventListener("click",function(evento){
     let datosFDormularioPaciente={
         nombre:nombrePaciente.value,
         fechaNacimiento:fechanacimientoPaciente.value,
-        ciudad:ciudadPaciente.value,
         correo:correoPaciente.value,
         telefono:telefonoPaciente.value,
         ips:ipsPaciente.value,
