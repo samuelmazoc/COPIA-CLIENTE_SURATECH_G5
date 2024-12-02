@@ -25,8 +25,19 @@ buscarMedico()
         let nombre = document.createElement("h2")
         nombre.textContent=medico.nombre
 
+        let correo = document.createElement("p");
+        correo.classList.add("card-text");
+        correo.textContent = medico.correo;
+
+        let especialidad = document.createElement("p2");
+        especialidad.classList.add("card-text");
+        especialidad.textContent = medico.especialidad;
+
+
         //paso final (ORDENANDO LAS CARTAS)
         tarjetas.appendChild(nombre)
+        tarjetas.appendChild(correo)
+        tarjetas.appendChild(especialidad)
         columna.appendChild(tarjetas)
         fila.appendChild(columna) 
     })
